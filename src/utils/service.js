@@ -1,5 +1,5 @@
 import {target} from './config'
-console.log('target', target)
+
 let Service = {
     //项目接口请求的基准url
     BaseURL: target + '/api/v1',
