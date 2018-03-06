@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var config = require('./webpack.dev.js');
+const common = require('./webpack.common.js')
 
 const options = {
     contentBase: './dist',
@@ -12,7 +13,7 @@ const options = {
   
 //启动服务
 var server = new WebpackDevServer(webpack(config), {
-    publicPath: config.output.publicPath,
+    publicPath: common.output.publicPath,
 	// 相当于通过本地node服务代理请求到了http://cnodejs.org/api
     proxy: {
 	    "/api/*": {
