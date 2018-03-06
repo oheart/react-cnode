@@ -52,6 +52,23 @@ https://github.com/brickspert/blog/issues/3
         "deploy": "gh-pages -d dist"
     - 运行npm run build 和 npm run deploy
 
+11. **开发和生产环境请求不同的根路径设置**
+让接口请求在开发环境和生产环境都能请求到，通过utils里的config.js文件，然后在service里引入加在请求的url之前。 
+
+config.js文件：
+```js
+export const target = process.env.NODE_ENV !== 'production' ? '' : 'https://cnodejs.org'; //目标网站
+```
+service.js文件
+```js
+import {target} from './config'
+
+let Service = {
+  BaseURL: target + '/api/v1'
+}
+```
+
+
 
 
 
