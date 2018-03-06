@@ -1,0 +1,624 @@
+//common style
+@style-bg: #eee;
+@style-main : #80bd01;
+@white-color: #FFF;
+
+.white-color{
+    color:@white-color;
+}
+
+.clear{
+    *zoom:1;
+}
+.clear:after{
+    clear:both;
+    content:'';
+    display:block;
+}
+
+//根元素
+#root{
+    height:100%;
+    .cnode-content-wrapper{
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
+        height: 100%;
+    }
+}
+
+//加载更多
+.load-more-container{
+    text-align:center;
+    padding:10px 0;
+}
+
+// 首页头部
+.index-menu-header {
+    color: @white-color;
+    background: @style-main;
+    font-size: 1.6rem;
+    width: 100%;
+   .cnode-nav{
+        .cnode-nav-list {
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            padding: 10px 3px;
+            .cnode-nav-item {
+                flex: 1;
+                text-align: center;
+                &:not(:last-child) {
+                    border-right: 1px solid #618F00;
+                }
+                a{
+                    color: @white-color;
+                }
+                .sel-nav {
+                    background: #5e8a01;
+                    border-radius: 4px;
+                    width: 80%;
+                    display: inline-block;
+                    padding: 4px 0;
+                }
+            }
+        }
+    }  
+}
+
+// 公用头部
+.common-cnode-header{
+    width: 100%;
+    font-size: 1.6rem;
+    color: @white-color;
+    background: @style-main;
+    display: flex;
+    display: -webkit-flex;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    align-items: center;
+    .header-txt-part{
+         flex:1;
+         text-align:center;   
+    }
+}
+
+//公用底部
+.common-cnode-footer {
+    color: @white-color;
+    background: @style-main;
+    font-size: 1.6rem;
+    width: 100%;
+    .cnode-footer-sortlist {
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        .cnode-footer-options {
+            flex: 1;
+            text-align: center;
+            .iconfont {
+                font-size: 2rem;
+            }
+            .bottom-footer-icon{
+                height: 4px;
+                display:block;
+            }
+            .home-page-icon {
+                font-size: 1.6rem;
+            }
+            .msg-icon {
+                font-size: 1.8rem;
+            }
+            a{
+                color: @white-color;
+            }
+            .unread-msg-hint{
+                background:red;
+                padding:2px 6px;
+                border-radius:50%;
+                font-size:1.3rem;
+                position: relative;
+                top: -5px;
+                left: 24px;
+            } 
+        }
+        .sel-footer-options{
+            padding: 6px 0;
+            background:#87c701;
+            display: block;   
+        }
+    }
+}
+
+
+/* 公用主题内容 */
+.cnode-main-wrapper{
+    display: flex;
+    display: -webkit-flex;
+    flex: 1;
+    overflow-y: scroll;
+    width:100%;
+}
+.main-part-wrapper{
+    width:100%;
+    flex: 1;
+    overflow-y: scroll;
+}
+
+/* 首页主题列表 */
+.cnode-topics-list {
+    width:100%;
+    .cnode-topics-item {
+        width:100%;
+        padding: 10px 10px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #ccc;
+        font-size: 1.2rem;
+        .topic-item-hd {
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            .topic-tit-btn{
+                padding: 2px 4px;
+                border-radius: 4px;
+                border:1px solid #ccc;
+                margin-right: 10px;
+            }
+            .topic-desc-tit{
+                flex:1;
+                font-size: 1.4rem;
+                text-overflow:ellipsis;
+                white-space:nowrap;
+                overflow:hidden;
+            }
+            margin-bottom: 6px;
+        }
+        .topic-item-bd {
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            .topic-user-info{
+                display: flex;
+                display: -webkit-flex;
+                flex: 1;
+                align-items: center;
+                .topic-avatar {
+                    height: 38px;
+                    border-radius: 19px;
+                    margin-right: 6px;
+                }
+            }
+        } 
+    }
+    .load-more-container{
+        font-size: 1.4rem;
+        color:#2c3e50;
+    }
+}
+
+// 登录
+.signin-content-box{
+    width:280px;
+    margin: 45% auto 0;
+    .access-token-input{
+        width:100%;
+        border-radius: 5px;
+        border: 1px solid @style-bg;
+        padding: 8px 10px;
+        box-sizing:border-box;
+        font-size: 1.2rem;
+    }
+    .signin-btn{
+        display: block;
+        width: 100%;
+        padding: 5px 10px;
+        line-height: 28px;
+        border-radius: 5px;
+        text-align: center;
+        color: @white-color;
+        background: @style-main;
+        margin-top:30px;
+        border:none;
+        font-size: 1.4rem;
+    }
+}
+// 未登录提示
+.signin-msg-box{
+    width:100%;
+    margin:30px 0 30px;
+    text-align: center;
+    font-size: 1.6rem;
+    .signin-tip-link{
+        color: @style-main;
+    }
+}
+
+//退出
+.signout-content-box{
+    width: 280px;
+    margin: 45% auto 0;
+    font-size: 1.4rem;
+    .signout{
+        display: block;
+        width: 100%;
+        padding: 5px 10px;
+        line-height: 28px;
+        border-radius: 5px;
+        text-align: center;
+        color: @white-color;
+        background: #e63e3e;
+        margin-top:30px;
+        border:none;
+        font-size: 1.4rem;
+    }
+}
+
+//个人中心
+.user-info-wrapper{
+    width: 100%;
+    .user-info-center{
+        width:100%;
+        padding: 20px 0;
+        background: #87c701;
+        color: @white-color;
+        text-align: center;
+        font-size:1.2rem;
+        .user-avatar{
+            width:80px;
+            height:80px;
+            border-radius:40px;
+        }
+        .user-login-name{
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .user-reg-date{
+            margin-left: 20px;
+        }
+    }
+    .user-topic-reply{
+        font-size: 1.4rem;
+        .topic-reply-tab{
+            display: flex;
+            display: -webkit-flex;
+            font-size: 1.6rem;
+            text-align: center;
+            background: @style-bg;
+            .uinfo-tab-option{
+                flex: 1;
+                padding:8px 0;
+                
+            }
+            .sel-uinfo-tab{
+                border-bottom: 3px solid @style-main;
+            }
+        }
+        .topic-reply-list{
+            .trlist-item{
+                display:flex;
+                align-items:center;
+                padding: 8px 8px;
+                border-bottom: 1px solid @style-bg;
+                box-sizing:border-box;
+                .tr-reply-tit{
+                    flex: 1;
+                    text-overflow:ellipsis;
+                    white-space:nowrap;
+                    overflow:hidden;
+                }
+                .tr-res-date{
+                    font-size: 1.2rem;
+                    color: #aaa;
+                }
+            }
+        }
+    }
+}
+
+//消息
+.my-msg-list{
+    width:100%;
+    .my-msg-item{
+        display: flex;
+        display: -webkit-flex;
+        padding: 10px;
+        border-bottom: 1px solid @style-bg;
+        font-size:1.4rem;
+        align-items: center;
+        .msg-user-avatar{
+            width: 38px;
+            height: 38px;
+            border-radius:19px;
+            border: 1px solid #ddd;
+            background-size: cover;
+        }
+        .my-msg-details{
+            margin-left: 10px;
+            .msg-create-user{
+                font-weight: bold;
+            }
+            .msg-create-time{
+                margin-left: 5px;
+                font-size: 1.2rem;
+                color: #999;
+            }
+            .unread-red-dot{
+                color:red;
+                margin-right: 4px;
+            }
+            .msg-reply-content{
+                color: @style-main;
+            }
+        }
+    }
+}
+
+// 发表
+.posted-icon{
+    font-size: 2.4rem!important;
+}
+.post-content-box{
+    width: 100%;
+    .post-content-list{
+        .post-content-item{
+            padding: 10px 10px;
+            border-bottom: 1px solid @style-bg;
+            color: #444;
+            .post-content-input{
+                width:100%;
+                border:none;
+                padding:6px 0;
+                font-size: 1.4rem;
+                color:#444;
+            }
+            .post-content-select{
+                border-radius:3px;
+                box-sizing: border-box;
+                font-size:1.4rem;
+            }
+        }
+    }
+}
+    
+// 主题详情
+.topic-detail-content{
+    .topic-detail-uinfo{
+        display: flex;
+        display: -webkit-flex;
+        border-bottom:1px solid @style-bg;
+        padding: 10px 6px;
+        font-size: 1.3rem;
+        color:#666;
+        .uinfo-details-inner{
+            display: flex;
+            display: -webkit-flex;
+            flex: 1;
+            .topic-user-avatar{
+                height: 38px;
+                border-radius: 19px;
+                margin-right: 6px;
+            }
+            .topic-detail-user{
+                color:@style-main;
+                margin-right:6px;
+            }
+            .topic-read-num{
+                margin-right: 6px;
+            }
+        }
+        .user-landlord-txt{
+            color:#aaa;
+        }
+    }
+    .topic-article-info{
+        .topic-articel-title{
+            text-align:center;
+            padding: 10px 8px;
+            background: @style-bg;
+        }
+        .topic-articel-content{
+            padding: 10px 10px;
+            overflow:hidden;
+            line-height:18px;
+            & img{
+                width:100%;
+            }
+        }
+    }
+}
+.topic-reply-detail-content{
+    .reply-num-box{
+        background: @style-bg;
+        border-left: 8px solid @style-main;
+        padding: 5px 10px;
+        font-size: 1.4rem;
+    }
+    .reply-list-box{
+        .reply-list-part{
+            padding: 10px 10px;
+            border-bottom:1px solid #ddd;
+            .topic-list-uinfo{
+                display: flex;
+                display: -webkit-flex;
+                color:#666;
+                font-size: 1.3rem;
+                .uinfo-details-area{
+                    flex: 1;
+                    display: flex;
+                    display: -webkit-flex;
+                    .topic-user-avatar{
+                        height: 38px;
+                        border-radius: 19px;
+                        margin-right: 6px;
+                    }
+                    .topic-detail-user{
+                        color:@style-main;
+                        margin-right:6px;
+                    }
+                    .topic-read-num{
+                        margin-right: 6px;
+                    }
+                }
+                .user-landlord-txt{
+                    color:#aaa;
+                }
+            }
+            .like-reply-content{
+                margin-top: 10px;
+                text-align:right;
+                .like-num{
+                    position: relative;
+                    top: -4px;
+                    left: 2px;
+                    color: #969494;
+                }
+                & .ever-like-style{
+                    color:@style-main;
+                    .like-num{
+                        color: @style-main;
+                    }
+                }
+                .reply-topic-icon{
+                    margin-left: 10px;
+                }
+            }
+        }
+        .detail-reply-box{
+            padding: 15px 14px;
+            box-sizing:border-box;
+            text-align:right;
+            .reply-textarea{
+                width:100%;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                height: 120px;
+                padding: 10px;
+                box-sizing:border-box;
+                font-size: 1.4rem;
+            }
+            .reply-btn{
+                padding: 5px 30px;
+                line-height: 24px;
+                border-radius: 5px;
+                border: 1px solid #6fa401;
+                font-size: 14px;
+                color: @white-color;
+                background: @style-main;
+                margin-top: 10px;
+            }
+        }
+    }
+    
+}
+
+//Loading动画
+.loading-wrapper {
+    margin: 20px auto;
+    width: 20px;
+    height: 20px;
+    position: relative;
+  }
+   
+  .container1 > div, .container2 > div, .container3 > div {
+    width: 6px;
+    height: 6px;
+    background-color: @style-main;
+   
+    border-radius: 100%;
+    position: absolute;
+    -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+    animation: bouncedelay 1.2s infinite ease-in-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+   
+  .loading-wrapper .loading-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+   
+  .container2 {
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+  }
+   
+  .container3 {
+    -webkit-transform: rotateZ(90deg);
+    transform: rotateZ(90deg);
+  }
+   
+  .circle1 { top: 0; left: 0; }
+  .circle2 { top: 0; right: 0; }
+  .circle3 { right: 0; bottom: 0; }
+  .circle4 { left: 0; bottom: 0; }
+   
+  .container2 .circle1 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+  }
+   
+  .container3 .circle1 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+   
+  .container1 .circle2 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+  }
+   
+  .container2 .circle2 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+  }
+   
+  .container3 .circle2 {
+    -webkit-animation-delay: -0.7s;
+    animation-delay: -0.7s;
+  }
+   
+  .container1 .circle3 {
+    -webkit-animation-delay: -0.6s;
+    animation-delay: -0.6s;
+  }
+   
+  .container2 .circle3 {
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+  }
+   
+  .container3 .circle3 {
+    -webkit-animation-delay: -0.4s;
+    animation-delay: -0.4s;
+  }
+   
+  .container1 .circle4 {
+    -webkit-animation-delay: -0.3s;
+    animation-delay: -0.3s;
+  }
+   
+  .container2 .circle4 {
+    -webkit-animation-delay: -0.2s;
+    animation-delay: -0.2s;
+  }
+   
+  .container3 .circle4 {
+    -webkit-animation-delay: -0.1s;
+    animation-delay: -0.1s;
+  }
+   
+  @-webkit-keyframes bouncedelay {
+    0%, 80%, 100% { -webkit-transform: scale(0.0) }
+    40% { -webkit-transform: scale(1.0) }
+  }
+   
+  @keyframes bouncedelay {
+    0%, 80%, 100% {
+      transform: scale(0.0);
+      -webkit-transform: scale(0.0);
+    } 40% {
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+  }
