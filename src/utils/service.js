@@ -1,6 +1,8 @@
+import {target} from './config'
+console.log('target', target)
 let Service = {
     //项目接口请求的基准url
-    BaseURL: '/api/v1',
+    BaseURL: target + '/api/v1',
 
     // 获取接口请求的url地址
     getReqUrl: function(){
