@@ -4,8 +4,7 @@ var config = require('./webpack.dev.js');
 
 const options = {
     contentBase: './dist',
-    hot: true,
-    // host: 'localhost'
+    hot: true
   };
   
   WebpackDevServer.addDevServerEntrypoints(config, options);
@@ -21,8 +20,7 @@ var server = new WebpackDevServer(webpack(config), {
 	    }
     },
     contentBase: './dist',
-    hot: true,
-    // host: 'localhost'
+    hot: true
 });
 
 //将其他路由，全部返回index.html
