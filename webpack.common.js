@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const entryPath = path.resolve(__dirname, 'src');
 const devPath = path.resolve(__dirname, 'dist');
 // const publicPath = '/';
-const publicPath = './';
+const publicPath = '/';
 
 
 module.exports = {

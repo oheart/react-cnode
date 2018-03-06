@@ -43,11 +43,11 @@ https://github.com/brickspert/blog/issues/3
     const wrapper = this.refs.wrapper;
     ```
 
-10. 部署到GitHub pages
+10. **部署到GitHub pages**
 步骤：
 -  npm install gh-pages --save-dev
 - 修改package.json
-    -  "homepage":"https://oheart.github.io/react-cnode"
+    -   "homepage":"https://oheart.github.io/react-cnode"
     -   "predeploy": "npm run build",
         "deploy": "gh-pages -d dist"
     - 运行npm run build 和 npm run deploy
