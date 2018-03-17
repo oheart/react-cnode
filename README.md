@@ -1,5 +1,9 @@
 ## react-cnode
 基于webpack + react + react-router + redux + less + ES6 的React版cnode社区
+## 项目运行
+- 开发： npm run server  
+- 生产： npm run build
+## 
 ## Note  
 1. **webpack-dev-server搭建环境（开发／生产），proxy实现访问cnode社区的接口请求**      
 [cnode-API](https://cnodejs.org/api)

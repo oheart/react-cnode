@@ -13,7 +13,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage":"https://oheart.github.io/react-cnode",
+  "homepage": "https://oheart.github.io/react-cnode",
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
